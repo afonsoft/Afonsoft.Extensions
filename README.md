@@ -18,7 +18,7 @@ Waffle Issues<br/> [![Waffle.io - Columns and their card count](https://badge.wa
     <td>Windows Server 2012</td>
     <td>dotnet 2.0.0</td>
     <td style="text-align:center">
-	<a href="https://ci.appveyor.com/project/afonsoft/Afonsoft.Extensions" target="_blank"><img src="https://travis-ci.org/afonsoft/Afonsoft.Extensions.svg?branch=master" alt="AppVeyor build status" /></a>
+	<a href="https://ci.appveyor.com/project/afonsoft/Afonsoft-Extensions" target="_blank"><img src="https://travis-ci.org/afonsoft/Afonsoft.Extensions.svg?branch=master" alt="AppVeyor build status" /></a>
 	</td>
   </tr>
   <tr>
