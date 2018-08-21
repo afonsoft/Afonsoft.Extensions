@@ -9,8 +9,6 @@ using System.Text;
 /// </summary>
 public static class ExceptionExtensions
 {
-    private static readonly object Locker = new object();
-
     /// <summary>
     /// Tratar a Exception para recuperar um string com todos o erro detalhado.
     /// </summary>
@@ -49,9 +47,6 @@ public static class ExceptionExtensions
                 tmpException = tmpException.InnerException;
             }
             msgRetorno = "Messages: " + exceptionMessages + Environment.NewLine + " StackTraces: " + stackTraces;
-
-            Trace.WriteLine(msgRetorno);
-            Debug.WriteLine(msgRetorno);
         }
         return msgRetorno;
     }
