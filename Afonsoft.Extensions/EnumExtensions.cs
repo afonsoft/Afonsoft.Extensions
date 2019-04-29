@@ -1,22 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-public static class EnumExtensions
+namespace Afonsoft.Extensions
 {
-    public static T ToEnum<T>(this string value)
+    public static class EnumExtensions
     {
-        return (T)Enum.Parse(typeof(T), value, true);
-    }
-
-    public static T ToEnum<T>(this string value, T defaultValue) where T : struct
-    {
-        if (string.IsNullOrEmpty(value))
+        public static T ToEnum<T>(this string value)
         {
-            return defaultValue;
+            return (T)Enum.Parse(typeof(T), value, true);
         }
 
-        T result = defaultValue;
-        return Enum.TryParse<T>(value, true, out result) ? result : defaultValue;
+        public static T ToEnum<T>(this string value, T defaultValue) where T : struct
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                return defaultValue;
+            }
+
+            return Enum.TryParse<T>(value, true, out var result) ? result : defaultValue;
+        }
     }
 }

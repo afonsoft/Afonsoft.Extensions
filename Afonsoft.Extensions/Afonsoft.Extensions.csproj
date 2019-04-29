@@ -1,17 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;net47;netcoreapp2.2</TargetFrameworks>
     <Authors>Afonso Dutra Nogueira Filho</Authors>
     <Company>Afonsoft</Company>
     <Copyright>afonsoft</Copyright>
     <PackageProjectUrl>https://github.com/afonsoft/Afonsoft.Extensions</PackageProjectUrl>
-    <PackageTags>Afonsoft Extensions</PackageTags>
+    <PackageTags>Afonsoft Extensions linq Enum Regex String Assembly DateTime</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
+    <AssemblyVersion>2019.4.29</AssemblyVersion>
+    <FileVersion>2019.4.29.0</FileVersion>
     <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>afonsoft.extensions.pfx</AssemblyOriginatorKeyFile>
+    <Version>2019.4.29</Version>
+    <RepositoryUrl>https://github.com/afonsoft/Afonsoft.Extensions</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
