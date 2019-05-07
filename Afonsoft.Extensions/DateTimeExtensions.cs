@@ -93,7 +93,7 @@ namespace Afonsoft.Extensions
         /// </summary>
         public static bool IsHoliday(this DateTime from)
         {
-            return Holidays(from).Where(x => x.Year == from.Year && x.Month == from.Month && x.Day == from.Day).Any();
+            return Holidays(from).Any(x => x.Year == @from.Year && x.Month == @from.Month && x.Day == @from.Day);
         }
 
         #region CalculateEaster 
