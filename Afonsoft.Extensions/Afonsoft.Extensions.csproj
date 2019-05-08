@@ -6,15 +6,22 @@
     <Company>Afonsoft</Company>
     <Copyright>afonsoft</Copyright>
     <PackageProjectUrl>https://github.com/afonsoft/Afonsoft.Extensions</PackageProjectUrl>
-    <PackageTags>Afonsoft Extensions linq Enum Regex String Assembly DateTime</PackageTags>
+    <PackageTags>Afonsoft Extensions linq Enum Regex String Assembly DateTime Object Exception</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <AssemblyVersion>2019.4.29</AssemblyVersion>
-    <FileVersion>2019.4.29.0</FileVersion>
+    <AssemblyVersion>2019.5.8</AssemblyVersion>
+    <FileVersion>2019.5.8</FileVersion>
     <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>afonsoft.extensions.pfx</AssemblyOriginatorKeyFile>
-    <Version>2019.4.29</Version>
+    <Version>2019.5.8</Version>
     <RepositoryUrl>https://github.com/afonsoft/Afonsoft.Extensions</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
+    <Description>Afonsoft Extensions for linq, Enum, Regex, String, Assembly, DateTime, Object, Exception</Description>
+    <NeutralLanguage>pt-BR</NeutralLanguage>
+    <PackageLicenseUrl>https://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
+    <DocumentationFile>C:\Users\anogueira\Documents\GitHub\Afonsoft.Extensions\Afonsoft.Extensions\Afonsoft.Extensions.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

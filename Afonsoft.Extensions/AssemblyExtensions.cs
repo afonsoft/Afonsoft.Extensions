@@ -4,6 +4,9 @@ using System.Reflection;
 
 namespace Afonsoft.Extensions
 {
+    /// <summary>
+    /// Classe para trabalhar com as Assembly
+    /// </summary>
     public static class AssemblyExtensions
     {
         /// <summary>

@@ -54,6 +54,9 @@ namespace Afonsoft.Extensions
 
 
         private static bool invalid = false;
+        /// <summary>
+        /// Valida se a string é um e-mail valido.
+        /// </summary>
         public static bool IsValidEmail(this string strIn)
         {
             invalid = false;

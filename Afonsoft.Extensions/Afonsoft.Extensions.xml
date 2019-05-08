@@ -1,0 +1,334 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Afonsoft.Extensions</name>
+    </assembly>
+    <members>
+        <member name="T:Afonsoft.Extensions.AssemblyExtensions">
+            <summary>
+            Classe para trabalhar com as Assembly
+            </summary>
+        </member>
+        <member name="M:Afonsoft.Extensions.AssemblyExtensions.GetLinkerTime(System.Reflection.Assembly,System.TimeZoneInfo)">
+            <summary>
+            The method was working for .Net Core 1.0, but stopped working after .Net Core 1.1 release(gives random years in 1900-2020 range)
+            </summary>
+            <returns>Displaying the build date</returns>
+        </member>
+        <member name="T:Afonsoft.Extensions.DateTimeExtensions">
+            <summary>
+            Classe com extenção para DATETIME 
+            AFONSO DUTRA NOGUEIRA FILHO
+            </summary>
+        </member>
+        <member name="M:Afonsoft.Extensions.DateTimeExtensions.EachDay(System.DateTime,System.DateTime)">
+            <summary>
+            ForEach por dia
+            <example>
+            ForEach de uma data
+            <code>
+            DateTime dateTime = new DateTime(2017,1,1); 
+            foreach(DateTime date in dateTime.EachDay(new DateTime(2017,1,30)))
+            {
+             ... Code
+            }
+            </code>
+            </example>
+            </summary>
+            <param name="from">Data Inicial</param>
+            <param name="thru">Data final</param>
+            <returns>Next Date</returns>
+        </member>
+        <member name="M:Afonsoft.Extensions.DateTimeExtensions.EachMonth(System.DateTime,System.DateTime)">
+            <summary>
+            ForEach por mês
+            <example>
+            ForEach de uma data
+            <code>
+            DateTime dateTime = new DateTime(2017,1,1); 
+            foreach(DateTime date in dateTime.EachMonth(new DateTime(2017,6,01)))
+            {
+             ... Code
+            }
+            </code>
+            </example>
+            </summary>
+            <param name="from">Data Inicial</param>
+            <param name="thru">Data final</param>
+            <returns>Next Month Date</returns>
+        </member>
+        <member name="M:Afonsoft.Extensions.DateTimeExtensions.IsWorkingDay(System.DateTime)">
+            <summary>
+            Verifica se é um dia útil, se não é sabado e domigo e nem um feriado nacional brasileiro 
+            </summary>
+        </member>
+        <member name="M:Afonsoft.Extensions.DateTimeExtensions.Holidays(System.DateTime)">
+            <summary>
+            Lista de feriados nacionais brasileiros (PT-BR)
+            </summary>
+            <returns>Retorna um array de feriados nacionais</returns>
+        </member>
+        <member name="M:Afonsoft.Extensions.DateTimeExtensions.IsHoliday(System.DateTime)">
+            <summary>
+            Verifica se a data é um feriado
+            </summary>
+        </member>
+        <member name="M:Afonsoft.Extensions.DateTimeExtensions.CalculateEaster(System.Int32)">
+            <summary>
+            FUNÇÃO PARA CALCULAR A DATA DO DOMINGO DE PASCOA
+            http://www.inf.ufrgs.br/~cabral/Pascoa.html
+            </summary>
+            <param name="year">ANO QUALQUER</param>
+            <returns>DateTime</returns>
+        </member>
+        <member name="M:Afonsoft.Extensions.DateTimeExtensions.IsWeekEndDay(System.DateTime)">
+            <summary>
+            Verifica se é um final de semana (Sabado e Domingo)
+            </summary>
+        </member>
+        <member name="M:Afonsoft.Extensions.DateTimeExtensions.Next(System.DateTime,System.DayOfWeek)">
+            <summary>
+            Retorna o proximo dia da semana selecionada
+            <example>
+            Hoje é Quarta-Feira e quero saber qual a data da proxima terça-feira
+            <code>
+            DateTime dateTime = new DateTime(2017,4,26); //Quarta-Feira (Wednesday)
+            var date = dateTime.Next(Tuesday); //date = 2017-05-02
+            </code>
+            </example>
+            </summary>
+        </member>
+        <member name="M:Afonsoft.Extensions.DateTimeExtensions.AddWorkDays(System.DateTime,System.Int32,System.DateTime[])">
+            <summary>
+            Adicionar x dia útil em uma data.
+            <example>
+            Como utilizar o metodo
+            <code>
+            DateTime dateTime = new DateTime(2017,4,26); //Quarta-Feira (Wednesday)
+            var date = dateTime.AddWorkDays(3); //date =  2017-05-02 (01/05 é feriado)
+            </code>
+            </example>
+            </summary>
+        </member>
+        <member name="M:Afonsoft.Extensions.DateTimeExtensions.BusinessDaysUntil(System.DateTime,System.DateTime,System.DateTime[])">
+            <summary>
+            Calcula a quantidade de dias uteis entre um intervalo.
+            </summary>
+            <param name="firstDay">Data inicial</param>
+            <param name="lastDay">Data Final</param>
+            <param name="bankHolidays">Lista de Feiados</param>
+            <returns>Numero de dias uteis</returns>
+        </member>
+        <member name="T:Afonsoft.Extensions.EnumExtensions">
+            <summary>
+            Classe para trabalhar com as Enum
+            </summary>
+        </member>
+        <member name="M:Afonsoft.Extensions.EnumExtensions.ToEnum``1(System.String)">
+            <summary>
+            Converter o valor de um Enum em um Enum
+            </summary>
+            <typeparam name="T">O enum de retorno</typeparam>
+            <param name="value">Valor converter</param>
+        </member>
+        <member name="M:Afonsoft.Extensions.EnumExtensions.ToEnum``1(System.String,``0)">
+            <summary>
+            Converter o valor de um Enum em um Enum
+            </summary>
+            <typeparam name="T">O enum de retorno</typeparam>
+            <param name="value">Valor converter</param>
+            <param name="defaultValue">O default value deste Enum</param>
+            <returns></returns>
+        </member>
+        <member name="T:Afonsoft.Extensions.ExceptionExtensions">
+            <summary>
+            Classe com extenção para EXCEPTION 
+            AFONSO DUTRA NOGUEIRA FILHO
+            </summary>
+        </member>
+        <member name="M:Afonsoft.Extensions.ExceptionExtensions.Treatment(System.Exception)">
+            <summary>
+            Tratar a Exception para recuperar um string com todos o erro detalhado.
+            </summary>
+        </member>
+        <member name="T:Afonsoft.Extensions.LinqExtensions">
+            <summary>
+            Classe com extenção para LINQ 
+            AFONSO DUTRA NOGUEIRA FILHO
+            </summary>
+        </member>
+        <member name="M:Afonsoft.Extensions.LinqExtensions.Page``1(System.Linq.IQueryable{``0},System.Int32,System.Int32)">
+            <summary>
+            Used by LINQ to SQL - Paginate Source
+            </summary>
+        </member>
+        <member name="M:Afonsoft.Extensions.LinqExtensions.Page``1(System.Collections.Generic.IEnumerable{``0},System.Int32,System.Int32)">
+            <summary>
+            Used by LINQ - Paginate Source
+            </summary>
+        </member>
+        <member name="T:Afonsoft.Extensions.Utf8StringWriter">
+            <summary>
+            Classe interna para trabalhar com UFT8
+            </summary>
+        </member>
+        <member name="T:Afonsoft.Extensions.ObjectExtensions">
+            <summary>
+            Classe com extenção para OBJECT 
+            AFONSO DUTRA NOGUEIRA FILHO
+            </summary>
+        </member>
+        <member name="M:Afonsoft.Extensions.ObjectExtensions.NullToString(System.Object)">
+            <summary>
+            Metodo para tratar o Null para Empty ou aspas
+            </summary>
+            <param name="Value"></param>
+            <returns>Value ou Empty</returns>
+        </member>
+        <member name="M:Afonsoft.Extensions.ObjectExtensions.SerializeXml``1(``0)">
+            <summary>
+            Serializar o Objeto - Criar o XML
+            </summary>
+            <typeparam name="T">Tipo do Objeto</typeparam>
+            <param name="toSerialize">Objeto a Serializar</param>
+            <returns>XML</returns>
+        </member>
+        <member name="M:Afonsoft.Extensions.ObjectExtensions.SerializeJson``1(``0)">
+            <summary>
+            Serializar o Objeto - Criar o Json
+            </summary>
+            <typeparam name="T">Tipo do Objeto</typeparam>
+            <param name="toSerialize">Objeto a Serializar</param>
+            <returns>JSON</returns>
+        </member>
+        <member name="M:Afonsoft.Extensions.ObjectExtensions.DeserializeJson``1(System.String)">
+            <summary>
+            Deserialize a string Json para um objeto
+            </summary>
+            <typeparam name="T">Tipo do objeto</typeparam>
+            <param name="json">String em json</param>
+            <returns>retorna o objeto preenchido</returns>
+        </member>
+        <member name="M:Afonsoft.Extensions.ObjectExtensions.DeserializeXml``1(System.String)">
+            <summary>
+            Deserialize a string xml para um objeto
+            </summary>
+            <typeparam name="T">Tipo do objeto</typeparam>
+            <param name="xml">String em XML</param>
+            <returns>retorna o objeto preenchido</returns>
+        </member>
+        <member name="T:Afonsoft.Extensions.RegexExtensions">
+            <summary>
+            Classe para trabalhar com a Regex
+            </summary>
+        </member>
+        <member name="M:Afonsoft.Extensions.RegexExtensions.RemoveSpecialCharacters(System.String)">
+            <summary>
+            Remover os caracteres especiais do texto
+            </summary>
+        </member>
+        <member name="M:Afonsoft.Extensions.RegexExtensions.IsValidEmail(System.String)">
+            <summary>
+            Valida se a string é um e-mail valido.
+            </summary>
+        </member>
+        <member name="T:Afonsoft.Extensions.StringExtensions">
+            <summary>
+            Classe com extenção para STRING 
+            AFONSO DUTRA NOGUEIRA FILHO
+            </summary>
+        </member>
+        <member name="M:Afonsoft.Extensions.StringExtensions.GetLast(System.String,System.Int32)">
+            <summary>
+            Retorna os ultimos caracteres do texto ex. (123456789).GetLast(4) => 6789
+            </summary>
+            <param name="text"></param>
+            <param name="length">Quantidade do retorno</param>
+            <returns>(123456789).GetLast(4) => 6789</returns>
+        </member>
+        <member name="M:Afonsoft.Extensions.StringExtensions.FormartSize(System.Int64)">
+            <summary>
+            Retorna o valor em KB, MB,GB, TB
+            </summary>
+            <param name="value">o valor em bytes</param>
+            <returns>Retorna o valor em KB, MB,GB, TB</returns>
+        </member>
+        <member name="M:Afonsoft.Extensions.StringExtensions.FormartSize(System.Double)">
+            <summary>
+            Retorna o valor em KB, MB,GB, TB
+            </summary>
+            <param name="value">o valor em bytes</param>
+            <returns>Retorna o valor em KB, MB,GB, TB</returns>
+        </member>
+        <member name="M:Afonsoft.Extensions.StringExtensions.SplitTo``1(System.String,System.Char[])">
+            <summary>
+            Returns an enumerable collection of the specified type containing the substrings in this instance that are delimited by elements of a specified Char array
+            </summary>
+            <param name="text">The string.</param>
+            <param name="separator">
+            An array of Unicode characters that delimit the substrings in this instance, an empty array containing no delimiters, or null.
+            </param>
+            <typeparam name="T">
+            The type of the elemnt to return in the collection, this type must implement IConvertible.
+            </typeparam>
+            <returns>
+            An enumerable collection whose elements contain the substrings in this instance that are delimited by one or more characters in separator. 
+            </returns>
+        </member>
+        <member name="M:Afonsoft.Extensions.StringExtensions.Format(System.String,System.Object,System.Object[])">
+            <summary>
+            Igual a função String.Format
+            </summary>
+        </member>
+        <member name="M:Afonsoft.Extensions.StringExtensions.ToSecureString(System.String)">
+            <summary>
+            Converter a string em uma "SecureString"
+            </summary>
+            <param name="text">Input String</param>
+        </member>
+        <member name="M:Afonsoft.Extensions.StringExtensions.IsNumeric(System.String)">
+            <summary>
+            Verificar se é numerico o valor da string
+            </summary>
+        </member>
+        <member name="M:Afonsoft.Extensions.StringExtensions.ToUpperCaseFirst(System.String)">
+            <summary>
+            ToUpperCaseFirst - Deixar somente a Primeira Letra do texto em maiusculo.
+            <example>
+            Ex: afonso dutra nogueira => Afonso dutra nogueira
+            <code>
+            string t = "afonso dutra nogueira";
+            string r = t.ToUpperCaseFirst(); //Afonso dutra nogueira
+            </code>
+            </example>
+            </summary>
+        </member>
+        <member name="M:Afonsoft.Extensions.StringExtensions.ToUpperCaseWords(System.String)">
+            <summary>
+            ToUpperCaseWords - Deixar as primeiras Letra do texto em maiusculo.
+            <example>
+            afonso dutra nogueira => Afonso Dutra Nogueira
+            <code>
+             string t = "afonso dutra nogueira";
+            string r = t.ToUpperCaseFirst(); //Afonso Dutra Nogueira
+            </code>
+            </example>
+            </summary>
+        </member>
+        <member name="M:Afonsoft.Extensions.StringExtensions.RemoveAccents(System.String)">
+            <summary>
+            Remover os acentos do texto
+            </summary>
+        </member>
+        <member name="M:Afonsoft.Extensions.StringExtensions.IsCnpj(System.String)">
+            <summary>
+            Validar se o conteudo da String é um CNPJ
+            </summary>
+        </member>
+        <member name="M:Afonsoft.Extensions.StringExtensions.IsCpf(System.String)">
+            <summary>
+            Validar se o conteudo da String é um CPF
+            </summary>
+        </member>
+    </members>
+</doc>

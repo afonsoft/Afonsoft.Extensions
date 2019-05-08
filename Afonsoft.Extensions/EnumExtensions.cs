@@ -2,6 +2,9 @@
 
 namespace Afonsoft.Extensions
 {
+    /// <summary>
+    /// Classe para trabalhar com as Enum
+    /// </summary>
     public static class EnumExtensions
     {
         /// <summary>
