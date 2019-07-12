@@ -11,7 +11,7 @@
     <AssemblyVersion>2019.7.12</AssemblyVersion>
     <FileVersion>2019.7.12</FileVersion>
     <SignAssembly>false</SignAssembly>
-    <Version>2019.5.8</Version>
+    <Version>2019.7.12</Version>
     <RepositoryUrl>https://github.com/afonsoft/Afonsoft.Extensions</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <Description>Afonsoft Extensions for linq, Enum, Regex, String, Assembly, DateTime, Object, Exception</Description>
@@ -19,10 +19,6 @@
     <PackageLicenseUrl></PackageLicenseUrl>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageReleaseNotes>Afonsoft Extensions for linq, Enum, Regex, String, Assembly, DateTime, Object, Exception</PackageReleaseNotes>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
-    <DocumentationFile>C:\Users\anogueira\Documents\GitHub\Afonsoft.Extensions\Afonsoft.Extensions\Afonsoft.Extensions.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
