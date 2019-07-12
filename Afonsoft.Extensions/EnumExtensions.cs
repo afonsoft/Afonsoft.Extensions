@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 
 namespace Afonsoft.Extensions
 {
@@ -55,6 +56,6 @@ namespace Afonsoft.Extensions
             }
 
             return Enum.TryParse<T>(value, true, out var result) ? result : defaultValue;
-        }a
+        }
     }
 }
