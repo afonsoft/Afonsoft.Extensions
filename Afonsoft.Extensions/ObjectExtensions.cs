@@ -94,7 +94,30 @@ namespace Afonsoft.Extensions
                 return default(T);
             }
         }
+        /// <summary>
+        /// Converte o valor informado em um tipo desejado.
+        /// </summary>
+        /// <typeparam name="T">Tipo desejado.</typeparam>
+        /// <param name="valor">Valor informado.</param>
+        /// <param name="lancarExcecaoSeValorForNulo">Define se valores nulos devem retornar o valor padrao ou lancar excecao.</param>
+        /// <returns>Valor convertido para o tipo desejado. Se o valor for nulo ou string vazia, retorna o valor default do tipo.</returns>
+        public static T ParaTipo<T>(this object valor, bool lancarExcecaoSeValorForNulo = false)
+        {
+            if (!lancarExcecaoSeValorForNulo)
+            {
+                if (valor == null || valor == DBNull.Value || string.IsNullOrEmpty(valor.ToString()))
+                {
+                    return default(T);
+                }
+            }
 
+            if (typeof(T).IsEnum)
+            {
+                return (T)valor;
+            }
+
+            return (T)Convert.ChangeType(valor, typeof(T));
+        }
         /// <summary>
         /// Deserialize a string xml para um objeto
         /// </summary>
