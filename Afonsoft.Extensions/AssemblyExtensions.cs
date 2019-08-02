@@ -6,6 +6,7 @@ namespace Afonsoft.Extensions
 {
     /// <summary>
     /// Classe para trabalhar com as Assembly
+    /// https://stackoverflow.com/questions/1600962/displaying-the-build-date
     /// </summary>
     public static class AssemblyExtensions
     {
@@ -13,8 +14,10 @@ namespace Afonsoft.Extensions
         /// The method was working for .Net Core 1.0, but stopped working after .Net Core 1.1 release(gives random years in 1900-2020 range)
         /// </summary>
         /// <returns>Displaying the build date</returns>
+        /// <remarks>https://blog.codinghorror.com/determining-build-date-the-hard-way/</remarks>
         public static DateTime GetLinkerTime(this Assembly assembly, TimeZoneInfo target = null)
         {
+            //https://stackoverflow.com/questions/1600962/displaying-the-build-date
             var filePath = assembly.Location;
             const int c_PeHeaderOffset = 60;
             const int c_LinkerTimestampOffset = 8;
