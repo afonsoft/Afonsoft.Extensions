@@ -8,8 +8,8 @@
     <PackageProjectUrl>https://github.com/afonsoft/Afonsoft.Extensions</PackageProjectUrl>
     <PackageTags>Afonsoft Extensions linq Enum Regex String Assembly DateTime Object Exception</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <AssemblyVersion>2019.7.12</AssemblyVersion>
-    <FileVersion>2019.7.12</FileVersion>
+    <AssemblyVersion>2019.8.5</AssemblyVersion>
+    <FileVersion>2019.8.5</FileVersion>
     <SignAssembly>false</SignAssembly>
     <Version>2019.7.12</Version>
     <RepositoryUrl>https://github.com/afonsoft/Afonsoft.Extensions</RepositoryUrl>
