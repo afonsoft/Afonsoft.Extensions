@@ -6,7 +6,7 @@
     <Company>Afonsoft</Company>
     <Copyright>afonsoft</Copyright>
     <PackageProjectUrl>https://github.com/afonsoft/Afonsoft.Extensions</PackageProjectUrl>
-    <PackageTags>Afonsoft Extensions linq Enum Regex String Assembly DateTime Object Exception</PackageTags>
+    <PackageTags>Afonsoft Extensions linq Enum Regex String Assembly DateTime DataRow Object Exception</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <AssemblyVersion>2019.8.5</AssemblyVersion>
     <FileVersion>2019.8.5</FileVersion>
@@ -14,11 +14,11 @@
     <Version>2019.8.5</Version>
     <RepositoryUrl>https://github.com/afonsoft/Afonsoft.Extensions</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
-    <Description>Afonsoft Extensions for linq, Enum, Regex, String, Assembly, DateTime, Object, Exception</Description>
+    <Description>Afonsoft Extensions for linq, Enum, Regex, String, Assembly, DateTime, DataRow, Object, Exception</Description>
     <NeutralLanguage>pt-BR</NeutralLanguage>
     <PackageLicenseUrl></PackageLicenseUrl>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    <PackageReleaseNotes>Afonsoft Extensions for linq, Enum, Regex, String, Assembly, DateTime, Object, Exception</PackageReleaseNotes>
+    <PackageReleaseNotes>Afonsoft Extensions for linq, Enum, Regex, String, Assembly, DateTime, DataRow, Object, Exception</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
