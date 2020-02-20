@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net47;netcoreapp2.2;netcoreapp2.1;net45;net4</TargetFrameworks>
+    <TargetFrameworks>net4;net45;net461;net47;netcoreapp2.1;netcoreapp2.2;netcoreapp3.1;netstandard2.0</TargetFrameworks>
     <Authors>Afonso Dutra Nogueira Filho</Authors>
     <Company>Afonsoft</Company>
     <Copyright>afonsoft</Copyright>
@@ -24,5 +24,40 @@
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
   </ItemGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net35'">
+    <DefineConstants>NET;NET35</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net40'">
+    <DefineConstants>NET;NET40</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net45'">
+    <DefineConstants>NET;NET45;NETFULL</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net461'">
+    <DefineConstants>NET;NET461;NETFULL</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net47'">
+    <DefineConstants>NET;NET47;NETFULL;NETCORE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net48'">
+    <DefineConstants>NET;NET48;NETFULL;NETCORE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0'">
+    <DefineConstants>NETCORE;NETSTANDARD;NETSTANDARD2_0</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.1'">
+    <DefineConstants>NETCORE;NETSTANDARD;NETSTANDARD2_1</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp2.1'">
+    <DefineConstants>NETCORE;NETCOREAPP2_1;NETSTANDARD;NETSTANDARD2_0</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp2.2'">
+    <DefineConstants>NETCORE;NETCOREAPP2_2;NETSTANDARD;NETSTANDARD2_0</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.1'">
+    <DefineConstants>NETCORE;NETCOREAPP3_1;NETSTANDARD;NETSTANDARD2_1</DefineConstants>
+  </PropertyGroup>
+
 
 </Project>
