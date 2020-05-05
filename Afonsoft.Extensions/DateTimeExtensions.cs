@@ -5,11 +5,7 @@ using System.Linq;
 
 namespace Afonsoft.Extensions
 {
-    /// <summary>
-    /// Classe com extenção para DATETIME 
-    /// AFONSO DUTRA NOGUEIRA FILHO
-    /// </summary>
-    public static class DateTimeExtensions
+     public static class DateTimeExtensions
     {
         /// <summary>
         /// ForEach por dia
@@ -30,6 +26,28 @@ namespace Afonsoft.Extensions
         public static IEnumerable<DateTime> EachDay(this DateTime from, DateTime thru)
         {
             for (var day = from.Date; day.Date <= thru.Date; day = day.AddDays(1))
+                yield return day;
+        }
+
+        /// <summary>
+        /// ForEach por hora
+        /// <example>
+        /// ForEach de uma data
+        /// <code>
+        /// DateTime dateTime = new DateTime(2017,1,1, 8,0,0); 
+        /// foreach(DateTime date in dateTime.EachDay(new DateTime(2017,1,1,16,0,0)))
+        /// {
+        ///  ... Code
+        /// }
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="from">Data Inicial</param>
+        /// <param name="thru">Data final</param>
+        /// <returns>Next Date</returns>
+        public static IEnumerable<DateTime> EachHours(this DateTime from, DateTime thru)
+        {
+            for (var day = from; day <= thru; day = day.AddHours(1))
                 yield return day;
         }
         /// <summary>
@@ -72,20 +90,40 @@ namespace Afonsoft.Extensions
         {
             List<DateTime> arrayOfDate = new List<DateTime>();
             int year = from.Year;
-            arrayOfDate.Add(DateTime.ParseExact("01/01/" + year, "dd/MM/yyyy", CultureInfo.InvariantCulture));
-            arrayOfDate.Add(DateTime.ParseExact("21/04/" + year, "dd/MM/yyyy", CultureInfo.InvariantCulture));
-            arrayOfDate.Add(DateTime.ParseExact("01/05/" + year, "dd/MM/yyyy", CultureInfo.InvariantCulture));
-            arrayOfDate.Add(DateTime.ParseExact("07/09/" + year, "dd/MM/yyyy", CultureInfo.InvariantCulture));
-            arrayOfDate.Add(DateTime.ParseExact("12/10/" + year, "dd/MM/yyyy", CultureInfo.InvariantCulture));
-            arrayOfDate.Add(DateTime.ParseExact("02/11/" + year, "dd/MM/yyyy", CultureInfo.InvariantCulture));
-            arrayOfDate.Add(DateTime.ParseExact("15/11/" + year, "dd/MM/yyyy", CultureInfo.InvariantCulture));
-            arrayOfDate.Add(DateTime.ParseExact("25/12/" + year, "dd/MM/yyyy", CultureInfo.InvariantCulture));
+            arrayOfDate.Add(DateTime.ParseExact("01/01/" + year, "dd/MM/yyyy", new CultureInfo("pt-BR")));
+            arrayOfDate.Add(DateTime.ParseExact("21/04/" + year, "dd/MM/yyyy", new CultureInfo("pt-BR")));
+            arrayOfDate.Add(DateTime.ParseExact("01/05/" + year, "dd/MM/yyyy", new CultureInfo("pt-BR")));
+            arrayOfDate.Add(DateTime.ParseExact("07/09/" + year, "dd/MM/yyyy", new CultureInfo("pt-BR")));
+            arrayOfDate.Add(DateTime.ParseExact("12/10/" + year, "dd/MM/yyyy", new CultureInfo("pt-BR")));
+            arrayOfDate.Add(DateTime.ParseExact("02/11/" + year, "dd/MM/yyyy", new CultureInfo("pt-BR")));
+            arrayOfDate.Add(DateTime.ParseExact("15/11/" + year, "dd/MM/yyyy", new CultureInfo("pt-BR")));
+            arrayOfDate.Add(DateTime.ParseExact("25/12/" + year, "dd/MM/yyyy", new CultureInfo("pt-BR")));
             DateTime easterDay = CalculateEaster(year);
             arrayOfDate.Add(easterDay); //Domingo de Pascoa (Easter Day)
             arrayOfDate.Add(easterDay.AddDays(-47)); //The Carnival falls always 47 days before the Easter. Terça-feira de carnaval
             arrayOfDate.Add(easterDay.AddDays(-2)); //Paixão de Cristo
             arrayOfDate.Add(easterDay.AddDays(+60)); //The Corpus Christi falls always 60 days after the Easter.
             return arrayOfDate.ToArray();
+        }
+
+        /// <summary>
+        /// Metodo para Calcular o Domingo de Pascoa.
+        /// </summary>
+        /// <param name="from">DateTime para pegar o ano</param>
+        /// <returns>DateTime com a data da Pascoa</returns>
+        public static DateTime EasterDay(this DateTime from)
+        {
+            return EasterDay(from.Year);
+        }
+
+        /// <summary>
+        /// Metodo para Calcular o Domingo de Pascoa.
+        /// </summary>
+        /// <param name="year">O ano que será retornado a pascoa</param>
+        /// <returns>DateTime com a data da Pascoa</returns>
+        public static DateTime EasterDay(int year)
+        {
+            return CalculateEaster(year);
         }
 
         /// <summary>
@@ -144,21 +182,20 @@ namespace Afonsoft.Extensions
             int c = year % 7;
             int d = (19 * a + x) % 30;
             int e = (2 * b + 4 * c + 6 * d + y) % 7;
-            int dia;
-            int mes;
+            int day;
+            int month;
 
             if (d + e > 9)
             {
-                dia = (d + e - 9);
-                mes = 4;
+                day = (d + e - 9);
+                month = 4;
             }
             else
             {
-                dia = (d + e + 22);
-                mes = 3;
+                day = (d + e + 22);
+                month = 3;
             }
-            // ReSharper disable once UseStringInterpolation
-            return DateTime.Parse(string.Format("{0},{1},{2}", year, mes, dia));
+            return new DateTime(year, month, day);
         }
         #endregion
 
@@ -207,6 +244,10 @@ namespace Afonsoft.Extensions
         /// </code>
         /// </example>
         /// </summary>
+        /// <param name="from">DateTime Inicial</param>
+        /// <param name="workingDays">Quantidade de dias uteis</param>
+        /// <param name="bankHolidays">Lista de feriados default holidays</param>
+        /// <returns></returns>
         public static DateTime AddWorkDays(this DateTime from, int workingDays, params DateTime[] bankHolidays)
         {
             int direction = workingDays < 0 ? -1 : 1;
